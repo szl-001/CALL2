@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<title>Document</title>
+</head>
+<body>
+    <script>
+        function func() {
+    console.log(this.name)
+    console.log(this.age)
+
+    document.write(this.name)
+   
+    document.write(this.age)
+}
+var obj = {
+    name: "szl的年龄是",
+    age:"18"
+}
+Function.prototype.call2 = function(obj) {
+ 
+    obj.fn = this;
+    obj.fn();
+}
+func.call2(obj); 
+        </script>
+ 
+</body>
+</html>
